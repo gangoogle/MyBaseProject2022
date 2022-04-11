@@ -1,0 +1,170 @@
+plugins {
+    id 'com.android.application'
+    id 'org.jetbrains.kotlin.android'
+    id 'kotlin-android'
+    id 'kotlin-kapt'
+    id 'kotlin-android-extensions'
+    id 'org.greenrobot.greendao'
+}
+
+//定义方法，获取打包时间
+def releaseTime() {
+    return new Date().format("yyyyMMddHHmm")
+}
+
+ext {
+    //接口环境  使用自己维护的字段，而不使用系统的debug主要是考虑到release包也需要开发环境
+    isAppDebug = "true"
+    //严格模式
+    isStrictMode = "false"
+}
+
+//获取环境信息，测试环境则apk名称中添加“_测试环境”标识，正式环境无标识
+def runMode() {
+    if (isAppDebug == "true") {
+        return "_test_"
+    } else {
+        return "_online_"
+    }
+}
+
+
+android {
+    compileSdkVersion rootProject.ext.compileSdkVersion
+    buildToolsVersion rootProject.ext.buildToolsVersion
+    defaultConfig {
+        applicationId "com.rms.supply"
+        minSdkVersion rootProject.ext.minSdkVersion
+        targetSdkVersion rootProject.ext.targetSdkVersion
+        versionCode rootProject.ext.versionCode
+        versionName rootProject.ext.versionName
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        multiDexEnabled true
+    }
+
+    signingConfigs {
+        fsrKeystore {
+            keyAlias 'supply'
+            keyPassword 'abcd1234'
+            storeFile file('./supply.jks')
+            storePassword 'abcd1234'
+        }
+    }
+
+    buildTypes {
+        release {
+            //在java中，使用BuildConfig.IS_TEST_URL获取布尔值
+            buildConfigField "boolean", "IS_APP_DEBUG", "$isAppDebug"
+            buildConfigField "boolean", "IS_STRICT_MODE", "$isStrictMode"
+            ndk {
+                abiFilters "arm64-v8a", "armeabi-v7a"
+            }
+            minifyEnabled true //混淆开启
+            shrinkResources true
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            signingConfig signingConfigs.fsrKeystore
+            manifestPlaceholders = [
+                    app_name: "供应系统"
+            ]
+        }
+        debug {
+            //在java中，使用BuildConfig.IS_TEST_URL获取布尔值
+            buildConfigField "boolean", "IS_APP_DEBUG", "$isAppDebug"
+            buildConfigField "boolean", "IS_STRICT_MODE", "$isStrictMode"
+            ndk {
+                abiFilters "arm64-v8a", "armeabi-v7a"
+            }
+            minifyEnabled false
+            signingConfig signingConfigs.fsrKeystore
+            manifestPlaceholders = [
+                    app_name: "供应系统-开发"
+            ]
+        }
+    }
+
+    buildFeatures {
+        dataBinding = true
+        compose true
+    }
+
+    android.applicationVariants.all {
+        variant ->
+            variant.outputs.all {
+                //在这里修改apk文件名: APP_测试环境_release_v1.0.1_c2_202004221706.apk
+                outputFileName = "supply${runMode()}_${variant.buildType.name}_v${variant.versionName}_c${variant.versionCode}_${releaseTime()}.apk"
+            }
+    }
+
+    ndkVersion '21.0.6113669'
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
+    lintOptions {
+        disable 'InvalidPackage'
+        disable "ResourceType"
+        abortOnError false
+    }
+
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
+
+    composeOptions {
+        kotlinCompilerExtensionVersion '1.0.5'
+    }
+
+    kapt {
+        correctErrorTypes true
+        generateStubs = true
+    }
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation 'androidx.core:core-ktx:1.7.0'
+    implementation 'androidx.appcompat:appcompat:1.4.0-alpha03'
+    implementation 'com.google.android.material:material:1.4.0'
+    implementation 'androidx.constraintlayout:constraintlayout:2.0.4'
+    testImplementation 'junit:junit:4.13.2'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.3'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.4.0'
+
+    implementation project(path: ':wavesidebar')
+    implementation project(path: ':common')
+
+    //multidex
+    implementation 'com.android.support:multidex:1.0.3'
+
+    //Utils Code
+    implementation 'com.blankj:utilcodex:1.31.0'
+
+    //mmkv
+    implementation 'com.tencent:mmkv:1.2.13'
+
+    //指示器
+    implementation 'io.github.h07000223:flycoTabLayout:3.0.0'
+
+    //rx permission
+    implementation 'com.github.tbruyelle:rxpermissions:0.12'
+
+
+    //okhttp log解析器
+    implementation 'com.localebro:okhttpprofiler:1.0.8'
+
+    //greendao
+    implementation 'org.greenrobot:greendao:3.3.0'
+
+    //brv
+    implementation 'com.github.liangjingkanji:BRV:1.3.58'
+    //协程
+    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-android:1.5.1"
+    //NET
+    implementation 'com.squareup.okhttp3:okhttp:4.9.1'
+    implementation 'com.github.liangjingkanji:Net:3.2.0'
+    implementation 'com.github.jenly1314:zxing-lite:2.1.1'
+
+
+}

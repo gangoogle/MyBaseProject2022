@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">SupplySystem</string>
+
+    <string name="str_dialog_title">提示</string>
+    <string name="str_cancel">取消</string>
+    <string name="str_sure">确定</string>
+
+
+</resources>

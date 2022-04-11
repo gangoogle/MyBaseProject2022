@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#043986</color>
+    <color name="colorPrimaryDark">#043986</color>
+    <color name="colorAccent">#043986</color>
+    <!--纯透明-->
+    <color name="material_blue_600">#ff1e88e5</color>
+    <color name="transparent_half_1">#10000000</color>
+    <color name="colorTransparent">#00000000</color>
+    <color name="colorTransparent_1">#33000000</color>
+    <color name="colorTransparent_white">#33ffffff</color>
+    <color name="colorTransparent_pink">#33FF727C</color>
+    <color name="colorTransparent_dark">#88999999</color>
+    <color name="colorBlue618">#618fc7</color>
+    <color name="colorBlue107">#1078e2</color>
+    <color name="yellow">#F4D198</color>
+    <color name="orange">#F38460</color>
+    <color name="red">#FF0000</color>
+    <color name="black">#000000</color>
+    <color name="yellow2">#F49F16</color>
+    <color name="white">#ffffff</color>
+    <color name="colorGrayF1">#f1f1f1</color>
+    <color name="colorGrayF2">#fcfcfc</color>
+    <color name="colorBlack">#333</color>
+    <color name="colorGray999">#999999</color>
+    <color name="colorGrayCommon">#cecece</color>
+    <color name="colorGrayText">#939393</color>
+    <color name="colorGrayFA">#fafafa</color>
+    <color name="uploadDeleteRed">#ff4444</color>
+    <color name="colorGrayD9">#d9d9d9</color>
+    <!-- item 选中颜色-->
+    <color name="color_gray_f8">#F8F8F8</color>
+    <!--纯黑色-->
+    <color name="color_gray_178">#b2b2b2</color>
+    <color name="color_black_text">#333333</color>
+    <!--淡珊瑚色-->
+    <color name="colorLightCoral">#FF727C</color>
+    <!--浅灰色-->
+    <color name="colorLightGray">#d9d9d9</color>
+    <!--FirstFragment间隔颜色-->
+    <color name="color_bottom_bar_f5">#F5F5F4</color>
+
+    <color name="color_gray_999">#999999</color>
+    <!--纯黑色-->
+    <color name="color_black_333">#333333</color>
+    <color name="color_blue_ios">#258be3</color>
+
+    <color name="color_text_level_1">#3b4151</color>
+    <!-- 上传删除 红-->
+
+</resources>

@@ -1,0 +1,7 @@
+<resources>
+    <item name="tag_first" type="id"></item>
+    <item name="tag_second" type="id"></item>
+    <string name="str_data_get_error">数据获取失败</string>
+    <string name="str_request_check_net_reloading">请检查网络后点击重新加载</string>
+
+</resources>

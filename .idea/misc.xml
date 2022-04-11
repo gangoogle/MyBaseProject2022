@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="..\:/AndroidWorkSpace/CompanyProject/SupplyApp/app/src/main/res/drawable/bg_red_alpha_btn.xml" value="0.278" />
+        <entry key="..\:/AndroidWorkSpace/CompanyProject/SupplyApp/app/src/main/res/drawable/ic_baseline_qr_code_scanner_24.xml" value="0.278" />
+        <entry key="..\:/AndroidWorkSpace/CompanyProject/SupplyApp/app/src/main/res/layout/activity_capture.xml" value="0.23007246376811594" />
+        <entry key="..\:/AndroidWorkSpace/CompanyProject/SupplyApp/app/src/main/res/layout/activity_main.xml" value="0.39791666666666664" />
+        <entry key="..\:/AndroidWorkSpace/CompanyProject/SupplyApp/app/src/main/res/layout/activity_order_list.xml" value="0.39791666666666664" />
+        <entry key="..\:/AndroidWorkSpace/CompanyProject/SupplyApp/app/src/main/res/layout/activity_splash.xml" value="0.23007246376811594" />
+        <entry key="..\:/AndroidWorkSpace/CompanyProject/SupplyApp/app/src/main/res/layout/item_order.xml" value="0.39791666666666664" />
+        <entry key="..\:/AndroidWorkSpace/CompanyProject/SupplyApp/app/src/main/res/layout/layout_num_edit.xml" value="0.39791666666666664" />
+        <entry key="..\:/AndroidWorkSpace/GItProject/SupplySystem/app/src/main/res/drawable-v24/ic_baseline_arrow_back_ios_24.xml" value="0.2775" />
+        <entry key="..\:/AndroidWorkSpace/GItProject/SupplySystem/app/src/main/res/drawable-v24/shape_splash_bg.xml" value="0.2775" />
+        <entry key="..\:/AndroidWorkSpace/GItProject/SupplySystem/app/src/main/res/drawable/bg_common_alpha_btn.xml" value="0.2755" />
+        <entry key="..\:/AndroidWorkSpace/GItProject/SupplySystem/app/src/main/res/layout/activity_main.xml" value="0.33967391304347827" />
+        <entry key="..\:/AndroidWorkSpace/GItProject/SupplySystem/app/src/main/res/layout/activity_splash.xml" value="0.3927083333333333" />
+        <entry key="..\:/AndroidWorkSpace/GItProject/SupplySystem/app/src/main/res/layout/layout_dialog_confirm.xml" value="0.33967391304347827" />
+        <entry key="..\:/AndroidWorkSpace/GItProject/SupplySystem/app/src/main/res/layout/layout_empty.xml" value="0.33967391304347827" />
+        <entry key="..\:/AndroidWorkSpace/GItProject/SupplySystem/app/src/main/res/layout/layout_nav_title_bar.xml" value="0.3927083333333333" />
+        <entry key="..\:/AndroidWorkSpace/GItProject/SupplySystem/app/src/main/res/layout/layout_progress_dialog.xml" value="0.39791666666666664" />
+        <entry key="..\:/AndroidWorkSpace/GItProject/SupplySystem/common/src/main/res/layout/base_layout.xml" value="0.3927083333333333" />
+        <entry key="..\:/AndroidWorkSpace/GItProject/SupplySystem/common/src/main/res/layout/layout_empty.xml" value="0.33967391304347827" />
+        <entry key="..\:/AndroidWorkSpace/GItProject/SupplySystem/common/src/main/res/layout/layout_error_noretry.xml" value="0.33967391304347827" />
+      </map>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" project-jdk-name="1.8" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/build/classes" />
+  </component>
+  <component name="ProjectType">
+    <option name="id" value="Android" />
+  </component>
+</project>
